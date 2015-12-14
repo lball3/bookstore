@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/books" => "books#{index}", as: 'books'
+  get "/books/:id" => "books#show", as: 'book'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
+  #   resources :products don
   #     member do
   #       get 'short'
   #       post 'toggle'
