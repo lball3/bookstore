@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-4.times do
+# 4.times do
 
 
 Book.create([
@@ -15,5 +15,5 @@ Book.create([
   { title: 'Hamlet', author:'Shakespeare', pages:342, price:5.34 }
     ])
 
-end
+# end
 
