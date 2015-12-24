@@ -24,7 +24,10 @@ class BooksController < ApplicationController
     #redirect_to @book
     @book = Book.new(book_params)
     if @book.save
-        redirect_to @book
+        #redirect_to @book - Class 4
+        redirect_to @book, notice: "#{@book.title} was created!"
+        #flash[:success] = "#{@book.title} was successfully created."     
+        #redirect_to @book
     else
         render :new
     end
@@ -39,7 +42,10 @@ class BooksController < ApplicationController
     #@book.update(book_params)
     #redirect_to @book
     if @book.update(book_params)
-        redirect_to @book
+        #redirect_to @book
+        redirect_to @book, notice: "#{@book.title} was updated!"
+        #flash[:success] = "#{@book.title} was successfully updated."
+        #redirect_to @book
     else
         render :edit
     end
