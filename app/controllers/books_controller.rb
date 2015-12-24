@@ -13,6 +13,11 @@ class BooksController < ApplicationController
     #@book = Book.find(params[:id])
   end
 
+  def index
+    @available_at = Time.now
+    @books = Book.order(:title).page(params[:page])
+  end
+  
   def new
     @book = Book.new
   end
