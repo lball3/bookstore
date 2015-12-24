@@ -18,9 +18,16 @@ class BooksController < ApplicationController
   end
 
   def create
+    # Class 4 - Replace the create and update actioins  
+    ##@book = Book.new(book_params)
+    #@book.save
+    #redirect_to @book
     @book = Book.new(book_params)
-    @book.save
-    redirect_to @book
+    if @book.save
+        redirect_to @book
+    else
+        render :new
+    end
   end
 
   def edit
@@ -28,9 +35,14 @@ class BooksController < ApplicationController
   end
 
   def update
-    #@book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to @book
+    ##@book = Book.find(params[:id])
+    #@book.update(book_params)
+    #redirect_to @book
+    if @book.update(book_params)
+        redirect_to @book
+    else
+        render :edit
+    end
   end
 
   def destroy
