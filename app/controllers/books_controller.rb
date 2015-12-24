@@ -10,7 +10,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    #@book = Book.find(params[:id])
   end
 
   def index
@@ -23,41 +22,26 @@ class BooksController < ApplicationController
   end
 
   def create
-    # Class 4 - Replace the create and update actioins  
-    ##@book = Book.new(book_params)
-    #@book.save
-    #redirect_to @book
     @book = Book.new(book_params)
     if @book.save
-        #redirect_to @book - Class 4
         redirect_to @book, notice: "#{@book.title} was created!"
-        #flash[:success] = "#{@book.title} was successfully created."     
-        #redirect_to @book
     else
         render :new
     end
   end
 
   def edit
-    #@book = Book.find(params[:id])
   end
 
   def update
-    ##@book = Book.find(params[:id])
-    #@book.update(book_params)
-    #redirect_to @book
     if @book.update(book_params)
-        #redirect_to @book
         redirect_to @book, notice: "#{@book.title} was updated!"
-        #flash[:success] = "#{@book.title} was successfully updated."
-        #redirect_to @book
     else
         render :edit
     end
   end
 
   def destroy
-    #@book = Book.find(params[:id])
     @book.destroy
     redirect_to books_url
   end
@@ -71,6 +55,5 @@ class BooksController < ApplicationController
   def set_book
     @book = Book.find(params[:id])
   end
-
 
 end
